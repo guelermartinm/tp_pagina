@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BULLBENNY</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image" href="assets/bullbenny.logo.webp" />
+  <meta name="description" content="Landing single-page del TP con Inicio, Productos, Promociones y Contacto." />
+</head>
+<body>
+<div id="loginContainer" class="login-overlay">
+  <div class="login-box">
+    <h2>Ingresá tu nombre</h2>
+    <input type="text" id="nombreInput" placeholder="Tu nombre..." />
+    <button id="ingresarBtn">Ingresar</button>
+  </div>
+</div>
+<header class="header">
+  <div class="container nav">
+    <a class="brand" href="#inicio" aria-label="Inicio">
+      <img src="assets/bullbenny.logo.webp" alt="Logo BULLBENNY" style="height:28px;vertical-align:middle;margin-right:8px" />
+    </a>
+    <nav class="menu" aria-label="Navegación principal">
+      <a href="#inicio">Inicio</a>
+      <a href="#productos">Productos</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- INICIO -->
+  <section id="inicio" class="hero hero-carousel">
+    <h2 id="bienvenida"></h2>
+    <div class="carousel">
+      <!-- radios -->
+      <input id="s1" name="slider" type="radio" checked>
+      <input id="s2" name="slider" type="radio">
+      <input id="s3" name="slider" type="radio">
+      <input id="s4" name="slider" type="radio">
+
+      <div class="carousel-inner slides">
+        <div class="slide">
+          <img src="assets/buzo.webp" alt="Buzo Archivo Negro destacado">
+          <div class="copy">
+            <span class="badge">DROP · destacado</span>
+            <h2>Buzo Archivo Negro</h2>
+            <p>Algodón premium, fit relajado, tipografía BB.</p>
+            <p class="price">$120.000</p>
+            <a class="btn" href="#productos">Ver producto</a>
+          </div>
+        </div>
+        <div class="slide">
+          <img src="assets/pantalon.webp" alt="Pantalón Cargo OPS destacado">
+          <div class="copy">
+            <span class="badge">DROP · nuevo</span>
+            <h2>Pantalón Cargo OPS</h2>
+            <p>Ripstop técnico, bolsillos utilitarios.</p>
+            <p class="price">$180.000</p>
+            <a class="btn" href="#productos">Ver producto</a>
+          </div>
+        </div>
+        <div class="slide">
+          <img src="assets/camisa.webp" alt="Camisa Uniforme destacada">
+          <div class="copy">
+            <span class="badge">EDICIÓN</span>
+            <h2>Camisa Uniforme</h2>
+            <p>Gabardina liviana, corte oversize.</p>
+            <p class="price">$150.000</p>
+            <a class="btn" href="#productos">Ver producto</a>
+          </div>
+        </div>
+        <div class="slide">
+          <img src="assets/_totebag.webp" alt="Mochila Utilitaria destacada">
+          <div class="copy">
+            <span class="badge">RESTOCK</span>
+            <h2>Mochila Utilitaria</h2>
+            <p>Múltiples compartimientos, diaria y resistente.</p>
+            <p class="price">$130.000</p>
+            <a class="btn" href="#productos">Ver producto</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- dots -->
+      <div class="dots">
+        <label for="s1" aria-label="slide 1"></label>
+        <label for="s2" aria-label="slide 2"></label>
+        <label for="s3" aria-label="slide 3"></label>
+        <label for="s4" aria-label="slide 4"></label>
+      </div>
+
+      <!-- flechas -->
+      <label class="arrow prev" for="s4" aria-label="anterior">‹</label>
+      <label class="arrow next" for="s2" aria-label="siguiente">›</label>
+
+      <style>
+        #s2:checked ~ .arrow.prev{display:none}
+        #s2:checked ~ .arrow.prev[for="s1"]{display:inline-block}
+        #s2:checked ~ .arrow.next{display:none}
+        #s2:checked ~ .arrow.next[for="s3"]{display:inline-block}
+        #s3:checked ~ .arrow.prev{display:none}
+        #s3:checked ~ .arrow.prev[for="s2"]{display:inline-block}
+        #s3:checked ~ .arrow.next{display:none}
+        #s3:checked ~ .arrow.next[for="s4"]{display:inline-block}
+        #s4:checked ~ .arrow.prev{display:none}
+        #s4:checked ~ .arrow.prev[for="s3"]{display:inline-block}
+        #s4:checked ~ .arrow.next{display:none}
+        #s4:checked ~ .arrow.next[for="s1"]{display:inline-block}
+      </style>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2>Categorías destacadas</h2>
+      <div class="grid cols-4">
+        <article class="card"><img src="assets/buzo_1.webp" alt="Buzos / Hoodies"><div class="body"><strong>Buzos / Hoodies</strong><br/><span class="badge"><a href="#productos">Ver</a></span></div></article>
+        <article class="card"><img src="assets/remera_1.webp" alt="Remeras"><div class="body"><strong>Remeras</strong><br/><span class="badge"><a href="#productos">Ver</a></span></div></article>
+        <article class="card"><img src="assets/pantalon_1.webp" alt="Pantalones"><div class="body"><strong>Pantalones</strong><br/><span class="badge"><a href="#productos">Ver</a></span></div></article>
+        <article class="card"><img src="assets/accesorio.webp" alt="Accesorios"><div class="body"><strong>Accesorios</strong><br/><span class="badge"><a href="#productos">Ver</a></span></div></article>
+      </div>
+    </div>
+    <p class="promos-center">
+      <a class="btn" href="promociones.html">Ver todas las promociones</a>
+    </p>
+  </section>
+  <section id="nosotros" class="section">
+  <div class="container">
+    <h2>Nosotros</h2>
+    <p>BULLBENNY es una marca urbana nacida en Palermo, inspirada en la cultura callejera y la moda contemporánea. Buscamos ofrecer prendas cómodas, versátiles y con identidad local.</p>
+  </div>
+</section>
+  <section id="productos" class="section">
+    <div class="container">
+      <h2>Productos</h2>
+      <div class="grid cols-3">
+        <article class="card">
+          <img src="assets/buzo.png" alt="Buzo Archivo negro">
+          <div class="body">
+            <strong>Buzo Archivo Negro</strong>
+            <p>Algodón 100%. Fit relajado.</p>
+            <p class="price">$120.000</p>
+            <a class="btn" href="#contacto">Consultar</a>
+          </div>
+        </article>
+        <article class="card">
+          <img src="assets/remera.webp" alt="Remera Prototipo gris">
+          <div class="body">
+            <strong>Remera Prototipo Gris</strong>
+            <p>Jersey premium. Tipografía BB.</p>
+            <p class="price">$66.000</p>
+            <a class="btn" href="#contacto">Consultar</a>
+          </div>
+        </article>
+        <article class="card">
+          <img src="assets/pantalon.png" alt="Pantalón Cargo OPS">
+          <div class="body">
+            <strong>Pantalón Cargo OPS</strong>
+            <p>Bolsillos utilitarios. Tiro medio.</p>
+            <p class="price">$180.000</p>
+            <a class="btn" href="#contacto">Consultar</a>
+          </div>
+        </article>
+        <article class="card">
+          <img src="assets/camisa_azul.png" alt="Camisa Uniforme">
+          <div class="body">
+            <strong>Camisa Uniforme</strong>
+            <p>Gabardina liviana. Oversize.</p>
+            <p class="price">$150.000</p>
+            <a class="btn" href="#contacto">Consultar</a>
+          </div>
+        </article>
+        <article class="card">
+          <img src="assets/short.png" alt="Short Archivo">
+          <div class="body">
+            <strong>Short Archivo</strong>
+            <p>Ripstop técnico.</p>
+            <p class="price">$95.000</p>
+            <a class="btn" href="#contacto">Consultar</a>
+          </div>
+        </article>
+        <article class="card">
+          <img src="assets/mochila.webp" alt="Mochila Utilitaria">
+          <div class="body">
+            <strong>Mochila Utilitaria</strong>
+            <p>Múltiples compartimientos.</p>
+            <p class="price">$130.000</p>
+            <a class="btn" href="#contacto">Consultar</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto" class="section">
+    <div class="container">
+      <h2>Contacto</h2>
+      <form class="form" onsubmit="return false" aria-label="Formulario de contacto educativo">
+        <label>
+          <span class="hidden">Nombre</span>
+          <input class="input" type="text" placeholder="Nombre" required>
+        </label>
+        <label>
+          <span class="hidden">Email</span>
+          <input class="input" type="email" placeholder="Email" required>
+        </label>
+        <label>
+          <span class="hidden">Mensaje</span>
+          <textarea class="textarea" placeholder="Mensaje" required></textarea>
+        </label>
+        <button class="btn" type="submit">Enviar</button>
+      </form>
+
+      <div style="margin-top:28px">
+        <h3>Otros datos de contacto</h3>
+        <p>Direcciones: Malabia 1738 y Humboldt 1629 (Palermo) · Mitre 309 (Lomas de Zamora).</p>
+        <p>Tel: (011) 5555-5555 · Instagram: @bullbenny · Email: contacto@bullbenny.com</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="cols">
+      <div>
+        <strong>Locales </strong><br/>
+        <small>Malabia 1738, Palermo — Humboldt 1629, Palermo — Mitre 309, Lomas</small>
+      </div>
+      <div>
+        <strong>Horarios</strong><br/>
+        <small>Lunes a Sábados 12 a 20 h</small>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="scripts.js"></script>
+
+</body>
+</html>

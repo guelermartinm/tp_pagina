@@ -1,0 +1,152 @@
+
+/* Proyecto académico inspirado en Bullbenny — no oficial */
+:root{
+  --bg:#ffffff;
+  --text:#111111;
+  --muted:#6b7280;
+  --accent:#0a0a0a;
+  --border:#e5e7eb;
+  --cta:#111111;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',Arial,'Noto Sans',sans-serif;line-height:1.5}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.container{max-width:1100px;margin:0 auto;padding:0 16px}
+.hidden{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+
+/* Header */
+.header{position:sticky;top:0;z-index:10;background:#fff;border-bottom:1px solid var(--border)}
+.header .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+.brand{font-weight:800;letter-spacing:2px;font-size:22px}
+.menu{display:flex;gap:18px;font-weight:600}
+.menu a{padding:8px 10px;border-radius:8px}
+.menu a:hover{background:#f5f5f5}
+
+/* Hero */
+.hero{background:#f5f5f5 url('assets/hero-placeholder.jpg') center/cover no-repeat;min-height:52vh;display:flex;align-items:end;border-bottom:1px solid var(--border)}
+.hero .copy{background:rgba(255,255,255,0.82);backdrop-filter:saturate(120%) blur(2px);padding:24px;border-top-right-radius:12px}
+.hero h1{margin:0 0 8px 0;font-size:42px;letter-spacing:1px}
+.hero p{margin:0;color:var(--muted)}
+
+/* Buttons */
+.btn{display:inline-block;padding:12px 18px;border-radius:999px;border:1px solid #111;background:#111;color:#fff;font-weight:700;letter-spacing:.5px;transition:transform .08s ease}
+.btn:hover{transform:translateY(-1px);}
+.btn.outline{background:#fff;color:#111}
+
+/* Sections */
+.section{padding:56px 0;border-bottom:1px solid var(--border)}
+.section h2{font-size:28px;margin:0 0 14px 0}
+.grid{display:grid;gap:18px}
+.grid.cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.grid.cols-4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.card{border:1px solid var(--border);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.card .body{padding:14px}
+.price{font-weight:800}
+.badge{font-size:12px;border:1px solid var(--border);padding:4px 8px;border-radius:999px;color:var(--muted)}
+
+/* Contact */
+.form{display:grid;gap:12px;max-width:600px}
+.input, .textarea{width:100%;padding:12px;border:1px solid var(--border);border-radius:10px}
+.textarea{min-height:140px;resize:vertical}
+
+/* Footer */
+.footer{padding:26px 0}
+.footer .cols{display:flex;gap:24px;flex-wrap:wrap;border-top:1px solid var(--border);padding-top:20px;color:var(--muted)}
+.footer small{color:var(--muted)}
+
+/* Responsive */
+@media (max-width:880px){
+  .grid.cols-3{grid-template-columns:repeat(2,1fr)}
+  .grid.cols-4{grid-template-columns:repeat(2,1fr)}
+  .hero{min-height:44vh}
+  .hero h1{font-size:34px}
+}
+@media (max-width:560px){
+  .grid.cols-3,.grid.cols-4{grid-template-columns:1fr}
+}
+/* --- Carousel (sin JS) --- */
+.hero.hero-carousel{background:#f5f5f5;border-bottom:1px solid var(--border);min-height:56vh;display:block}
+.carousel{position:relative;max-width:1100px;margin:0 auto;padding:24px 16px}
+.carousel-inner{position:relative;overflow:hidden;border-radius:14px;border:1px solid var(--border);background:#fff}
+.carousel input[type="radio"]{position:absolute;opacity:0;pointer-events:none}
+
+.slide{position:absolute;inset:0;display:grid;grid-template-columns:1.1fr .9fr;gap:20px;align-items:center;
+       padding:24px;opacity:0;transform:scale(.98);transition:opacity .35s ease, transform .35s ease}
+.slide img{width:100%;height:100%;object-fit:cover;border-radius:10px}
+.slide .copy h2{margin:.2rem 0 6px 0;font-size:34px}
+.slide .copy p{color:var(--muted);margin:0 0 14px 0}
+
+#s1:checked ~ .slides .slide:nth-child(1),
+#s2:checked ~ .slides .slide:nth-child(2),
+#s3:checked ~ .slides .slide:nth-child(3),
+#s4:checked ~ .slides .slide:nth-child(4){opacity:1;transform:scale(1);position:relative}
+
+/* Dots */
+.dots{display:flex;gap:10px;justify-content:center;margin:14px 0}
+.dots label{width:10px;height:10px;border-radius:999px;border:1px solid var(--text);cursor:pointer}
+#s1:checked ~ .dots label[for="s1"],
+#s2:checked ~ .dots label[for="s2"],
+#s3:checked ~ .dots label[for="s3"],
+#s4:checked ~ .dots label[for="s4"]{background:#111}
+
+/* Arrows */
+.arrow{position:absolute;top:50%;transform:translateY(-50%);background:#fff;border:1px solid var(--border);
+       border-radius:999px;padding:8px 12px;cursor:pointer;user-select:none}
+.arrow.prev{left:12px} .arrow.next{right:12px}
+.arrow:hover{box-shadow:0 2px 12px rgba(0,0,0,.08)}
+
+.promos-center {
+  text-align: center;
+  margin-top: 24px;
+}
+
+.promos-center .btn {
+  display: inline-block;
+  background: #111;
+  color: #fff;
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 12px 24px;
+  transition: transform 0.1s ease;
+}
+
+.promos-center .btn:hover {
+  transform: translateY(-2px);
+  background: #000;
+}
+/* Responsive */
+@media (max-width:920px){
+  .slide{grid-template-columns:1fr;gap:12px}
+  .slide .copy h2{font-size:28px}
+}
+.login-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+  }
+  .login-box {
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+  }
+  .login-box input {
+    padding: 10px;
+    width: 200px;
+    margin-bottom: 10px;
+  }
+  .login-box button {
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  #bienvenida {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-top: 15px;
+    color: #333;
+  }

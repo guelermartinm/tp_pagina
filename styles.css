@@ -258,8 +258,12 @@ img{max-width:100%;display:block}
   cursor:pointer;
 }
 
-#bienvenida{text-align:center;font-size:1.5rem;margin-top:15px;color:#333}
-
+.btn-center {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  width: fit-content;
+}
 
 
 /* ============================================================

@@ -231,47 +231,17 @@ img{max-width:100%;display:block}
 .arrow.next{right:12px}
 .arrow:hover{box-shadow:0 2px 12px rgba(0,0,0,.08)}
 
-
-/* === LOGIN MODAL === */
-.login-overlay{
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,0.8);
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  z-index:999;
-}
-.login-box{
-  background:#fff;
-  padding:30px;
-  border-radius:8px;
-  text-align:center;
-}
-.login-box input{
-  padding:10px;
-  width:200px;
-  margin-bottom:10px;
-}
-.login-box button{
-  padding:10px 20px;
-  cursor:pointer;
-}
-
-.btn-center {
-  display: block;
-  margin: 0 auto;
-  text-align: center;
-  width: fit-content;
-}
-.promos-center {
+.promo-btn-wrapper {
   display: flex;
-  justify-content: center;   /* centra horizontalmente el contenido */
-  margin-top: 24px;
+  justify-content: center;
+  width: 100%;
+  margin: 32px 0;
 }
 
-.promos-center .btn {
-  margin: 0;                 /* por las dudas, sin márgenes raros */
+.promo-btn-wrapper .btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* ============================================================

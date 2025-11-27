@@ -1,49 +1,151 @@
-
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>BULLBENNY | Promociones</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="icon" type="image" href="assets/bullbenny.logo.webp" />
+  <meta name="description" content="Página de promociones de BULLBENNY." />
 </head>
-<body>
-  
+
+<body class="page-promos">
+
 <header class="header">
   <div class="container nav">
-    <a class="brand" href="index.html" aria-label="Inicio">BULLBENNY</a>
-    <nav class="menu" aria-label="Navegación principal">
-      <a href="index.html">Para volver al inicio</a>
+    <a class="brand" href="index.html">      
+      <img src="assets/bullbenny.logo.webp" alt="Logo BULLBENNY" style="height:28px;vertical-align:middle;margin-right:8px" />
+    </a>
+    <nav class="menu">
+      <a href="index.html">Inicio</a>
     </nav>
   </div>
 </header>
 
-  <main class="section">
-    <div class="container">
-      <h2>Promociones</h2>
-      <div class="grid cols-3">
-        <article class="card">
-          <div class="body">
-            <strong>ERROR SALE</strong>
-            <p>Hasta 40% OFF + 10% adicional por transferencia/efectivo.</p>
-          </div>
-        </article>
-        <article class="card">
-          <div class="body">
-            <strong>Envío gratis</strong>
-            <p>Envío sin costo superando el monto mínimo.</p>
-          </div>
-        </article>
-        <article class="card">
-          <div class="body">
-            <strong>Cuotas</strong>
-            <p>Pagá en hasta 6 cuotas sin interés.</p>
-          </div>
-        </article>
-      </div>
+<main class="section promo-section">
+  <div class="container promo-container">
+
+    <h2>Promociones</h2>
+
+    <p>
+      Completá las cantidades de los productos que quieras llevar y calculamos automáticamente la
+      <strong>promoción más conveniente</strong> para tu compra.
+    </p>
+
+    <p>
+      <strong>Importante:</strong> las promociones <strong>no son acumulables</strong>. El sistema compara todas las
+      ofertas disponibles y aplica sólo la que te da <strong>mayor descuento</strong>.
+    </p>
+
+    <h3>Promos vigentes</h3>
+
+    <div class="promo-card">
+      <ul>
+        <li><strong>2° producto al 50%:</strong> por cada 2 unidades del mismo artículo, la segunda tiene 50% OFF.</li>
+        <li><strong>3x2:</strong> por cada 3 unidades del mismo producto, pagás sólo 2.</li>
+        <li><strong>10% OFF desde $30.000:</strong> si el total de tu compra supera los $30.000.</li>
+      </ul>
     </div>
-  </main>
-  
+
+    <!-- FORMULARIO DE PRODUCTOS -->
+    <h3>Carrito</h3>
+
+    <form class="form" id="promoForm" onsubmit="return false">
+
+      <div class="promo-row">
+        <div class="promo-info">
+          <strong>Buzo Archivo Negro</strong><br/>
+          <small>Precio: $120.000</small>
+        </div>
+        <div class="promo-input">
+          <label>
+            Cantidad:
+            <input type="number" id="qtyBuzo" class="input" min="0" value="0">
+          </label>
+        </div>
+      </div>
+
+      <div class="promo-row">
+        <div class="promo-info">
+          <strong>Remera Prototipo Gris</strong><br/>
+          <small>Precio: $66.000</small>
+        </div>
+        <div class="promo-input">
+          <label>
+            Cantidad:
+            <input type="number" id="qtyRemera" class="input" min="0" value="0">
+          </label>
+        </div>
+      </div>
+
+      <div class="promo-row">
+        <div class="promo-info">
+          <strong>Pantalón Cargo OPS</strong><br/>
+          <small>Precio: $180.000</small>
+        </div>
+        <div class="promo-input">
+          <label>
+            Cantidad:
+            <input type="number" id="qtyCargo" class="input" min="0" value="0">
+          </label>
+        </div>
+      </div>
+
+      <div class="promo-row">
+        <div class="promo-info">
+          <strong>Camisa Uniforme</strong><br/>
+          <small>Precio: $150.000</small>
+        </div>
+        <div class="promo-input">
+          <label>
+            Cantidad:
+            <input type="number" id="qtyCamisa" class="input" min="0" value="0">
+          </label>
+        </div>
+      </div>
+
+      <div class="promo-row">
+        <div class="promo-info">
+          <strong>Short Archivo</strong><br/>
+          <small>Precio: $95.000</small>
+        </div>
+        <div class="promo-input">
+          <label>
+            Cantidad:
+            <input type="number" id="qtyShort" class="input" min="0" value="0">
+          </label>
+        </div>
+      </div>
+
+      <div class="promo-row">
+        <div class="promo-info">
+          <strong>Mochila Utilitaria</strong><br/>
+          <small>Precio: $130.000</small>
+        </div>
+        <div class="promo-input">
+          <label>
+            Cantidad:
+            <input type="number" id="qtyMochila" class="input" min="0" value="0">
+          </label>
+        </div>
+      </div>
+
+      <button class="btn promo-btn" id="calcularBtn">Calcular mejor promoción</button>
+    </form>
+
+    <!-- RESULTADOS -->
+    <div id="resultados" class="resultados-card" style="display:none">
+      <h3 class="resultados-titulo">Resultados</h3>
+
+      <p><strong>Total sin descuento:</strong> $<span id="totalSin"></span></p>
+      <p><strong>Descuento aplicado:</strong> $<span id="descuento"></span></p>
+      <p><strong>Total final:</strong> $<span id="totalFinal"></span></p>
+      <p><strong>Promoción aplicada:</strong> <span id="promoAplicada"></span></p>
+    </div>
+
+  </div>
+</main>
+
 <footer class="footer">
   <div class="container">
     <div class="cols">
@@ -59,5 +161,6 @@
   </div>
 </footer>
 
+<script src="scripts.js"></script>
 </body>
 </html>
